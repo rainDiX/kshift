@@ -2,7 +2,6 @@ import datetime
 import os
 import yaml
 import re
-import colorama
 import subprocess
 import requests
 
@@ -130,7 +129,7 @@ class config:
             print("##################################")
 
             if timer_status == "enabled":
-                print("Kshift "+colorama.Fore.GREEN + "ENABLED"+colorama.Fore.WHITE +":")
+                print("Kshift "+ "\033[32m" + "ENABLED"+ "\033[39m" +":")
                 timer = open(self.kshift_timer_loc, "r")
                 for line in timer:
                     m = re.search("[0-9]{1,2}:[0-9]{2}:[0-9]{2}", line)
@@ -142,7 +141,7 @@ class config:
 
                 print()
             else:
-                print("Kshift "+ colorama.Fore.RED+ "DISABLED."+ colorama.Fore.WHITE)
+                print("Kshift "+ "\033[31m" + "DISABLED."+ "'\033[39m'")
 
 
             print("##################################")
